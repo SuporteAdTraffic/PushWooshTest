@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Teste Pushwoosh</title>
+</head>
+<body>
+  <h1>Bem-vindo à Página de Teste do Pushwoosh (In-App Only)</h1>
+
+  <!-- SDK do Pushwoosh -->
+  <script src="https://cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js" async></script>
+  <script>
+    var Pushwoosh = Pushwoosh || [];
+
+    // Inicialização do SDK (somente mensagens in-app)
+    Pushwoosh.push(['init', {
+      logLevel: 'debug', // Mude para 'error' em produção
+
+      // 🔧 Substitua abaixo pelo seu código de aplicativo do Pushwoosh
+      applicationCode: '48B3F-3E57A',
+
+      // 🔧 IMPORTANTE: autoSubscribe pode ser mantido para permitir o registro inicial
+      autoSubscribe: true
+    }]);
+
+    // 🔧 Envie TAGs personalizadas para segmentação de mensagens in-app
+    Pushwoosh.push(function(api) {
+      api.setTags({
+        userType: 'premium',       // Segmento de usuário (exemplo)
+        versao_sistema: '1.2.3'    // Versão do sistema (exemplo)
+      });
+    });
+
+  </script>
+</body>
+</html>
