@@ -12,25 +12,25 @@
   <script>
     var Pushwoosh = Pushwoosh || [];
 
-    // Inicialização do SDK (somente mensagens in-app)
+    // Inicialização do SDK
     Pushwoosh.push(['init', {
       logLevel: 'debug', // Mude para 'error' em produção
-
-      // 🔧 Substitua abaixo pelo seu código de aplicativo do Pushwoosh
-      applicationCode: '48B3F-3E57A',
-
-      // 🔧 IMPORTANTE: autoSubscribe pode ser mantido para permitir o registro inicial
-      autoSubscribe: true
+      applicationCode: '48B3F-3E57A', // ✅ Seu código real de projeto
+      autoSubscribe: true // Garante o registro do visitante
     }]);
 
-    // 🔧 Envie TAGs personalizadas para segmentação de mensagens in-app
+    // Enviar tags personalizadas (opcional para segmentação)
     Pushwoosh.push(function(api) {
       api.setTags({
-        userType: 'premium',       // Segmento de usuário (exemplo)
-        versao_sistema: '1.2.3'    // Versão do sistema (exemplo)
+        userType: 'premium',        // Exemplo de tipo de usuário
+        versao_sistema: '1.2.3'     // Exemplo de versão do sistema
       });
     });
 
+    // ✅ Disparar o evento que ativa a mensagem in-app
+    Pushwoosh.push(function(api) {
+      api.postEvent("PW_ApplicationOpen"); // 🔥 Esse é o trigger configurado na mensagem
+    });
   </script>
 </body>
 </html>
