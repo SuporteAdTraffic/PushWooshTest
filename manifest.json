@@ -1,0 +1,7 @@
+{
+  "name": "suporteadtraffic.github.io",
+  "short_name": "suporteadtraffic.github.io",
+  "gcm_sender_id": "1000920487722",
+  "display": "standalone",
+  "gcm_user_visible_only": true
+}
