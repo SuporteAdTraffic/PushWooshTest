@@ -3,37 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Página de Teste Pushwoosh</title>
-  
-  <link rel="manifest" href="/manifest.json">
-  
-    <!-- SDK do Pushwoosh -->
-  <script src="https://cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js" async></script>
-  <script>
-    var Pushwoosh = Pushwoosh || [];
-
-    // Inicialização do SDK
-    Pushwoosh.push(['init', {
-      logLevel: 'debug', // Mude para 'error' em produção
-      applicationCode: '48B3F-3E57A', // ✅ Seu código real de projeto
-      autoSubscribe: true, // Garante o registro do visitante
-      subscribeWidget: {
-      enable: true
-    }
-    }]);
-
-    // Enviar tags personalizadas (opcional para segmentação)
-    Pushwoosh.push(function(api) {
-      api.setTags({
-        userType: 'premium',        // Exemplo de tipo de usuário
-        versao_sistema: '1.2.3'     // Exemplo de versão do sistema
-      });
-    });
-
-    // ✅ Disparar o evento que ativa a mensagem in-app
-    Pushwoosh.push(function(api) {
-      api.postEvent("PW_ApplicationOpen"); // 🔥 Esse é o trigger configurado na mensagem
-    });
-  </script>
 </head>
 <body>
   <h1>Bem-vindo à Página de Teste do Pushwoosh</h1>
