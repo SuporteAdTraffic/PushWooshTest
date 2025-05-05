@@ -6,14 +6,20 @@
 </head>
   
 <body>
+  
   <h1>Bem-vindo à Página de Testes!</h1>
 
-  <script>
-  var beamer_config = {
-    product_id : "fGxpEQvL75927" // DO NOT CHANGE: This is your product code on Beamer
-  };
+<script>
+  window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+    window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+  });
+
+  window.announcekit.push({
+    "widget": "https://announcekit.co/widgets/v2/2E2LW8",
+    "selector": ".announcekit-widget"
+  })
 </script>
-<script type="text/javascript" src="https://app.getbeamer.com/js/beamer-embed.js" defer="defer"></script>
+<script async src="https://cdn.announcekit.app/widget-v2.js"></script>
   
 </body>
   
